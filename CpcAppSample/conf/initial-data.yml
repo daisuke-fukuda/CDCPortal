@@ -1,0 +1,84 @@
+# Test data
+
+
+User(福田大翼):
+    email:          fukuda@cybeans.co.jp
+    password:       secret
+    nickname:       moyashi
+    fullname:       福田大翼
+    isAdmin:        true
+
+User(jeff):
+    email:          jeff@gmail.com
+    password:       secret
+    fullname:       Jeff
+    nickname:       じぇふ
+
+User(test):
+    email:          test@test.com
+    password:       secret
+    fullname:       test
+    nickname:       test
+
+
+
+Post(firstPost):
+    title:          第1回Java7
+    holdAt:         2011/01/01
+    postedAt:       2009/06/14
+    place:          事務所
+    theme:          Java7
+    lecturer:       福田大翼
+    author:         福田大翼
+    content:        >
+                    記念すべき第1回はJava7です。
+                    たくさん参加してくれるとうれしいです。
+
+Post(secondPost):
+    title:          第2回Androidアプリ
+    holdAt:         2012/01/01
+    postedAt:       2009/06/14
+    place:          事務所
+    theme:          Androidアプリ
+    lecturer:       jeff
+    author:         福田大翼
+    content:        >
+                    第2回はあんどろいど
+
+
+
+
+Participant(c1):
+    participant:    福田大翼
+    comment:        >
+                    さんかするよ～
+    postedAt:       2009-06-14
+    post:           firstPost
+
+Participant(c2):
+    participant:    jeff
+    comment:        >
+                    join!!
+    postedAt:       2009-06-14
+    post:           firstPost
+
+Participant(c3):
+    participant:    test
+    comment:        >
+                    join!!
+    postedAt:       2009-06-14
+    post:           firstPost
+
+Participant(c4):
+    participant:    福田大翼
+    comment:        >
+                    さんかするよ～
+    postedAt:       2009-06-14
+    post:           secondPost
+
+Participant(c5):
+    participant:    jeff
+    comment:        >
+                    join!!
+    postedAt:       2009-06-14
+    post:           secondPost

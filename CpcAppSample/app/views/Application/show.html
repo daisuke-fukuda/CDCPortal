@@ -1,0 +1,116 @@
+#{extends 'main.html' /}
+#{set title:post.title /}
+
+<div class="row-fluid">
+
+#{sidebar allPosts:allPosts/}
+
+       <div class="span9">
+            <div class="page-header">
+                <h1>${post.holdAt.format()} ${post.title}</h1>
+            </div>
+        </div>
+
+
+        <div class="span9">
+
+			<ul id="pagination">
+#{if post.previous()}
+			  	<li id = "previous">
+					<a href="@{Application.show(post.previous().id)}">
+						${post.previous().title}
+					</a>
+			    </li>
+ #{/if}
+ #{if post.next()}
+			  	<li id = "next">
+					<a href="@{Application.show(post.next().id)}">
+						${post.next().title}
+					</a>
+			    </li>
+#{/if}
+			</ul>
+
+        	<table class="table table-striped table-bordered table-condensed">
+        	    <tr>
+        	        <th>日時</th>
+        	        <th>${post.holdAt.format()}</th>
+        	    </tr>
+        	    <tr>
+        	        <th>場所</th>
+        	        <th>${post.place}</th>
+        	    </tr>
+        	    <tr>
+        	        <th>テーマ</th>
+        	        <th>${post.theme}</th>
+        	    </tr>
+        	    <tr>
+        	        <th>講師</th>
+        	        <th>${post.lecturer.nickname}（${post.lecturer.email}）</th>
+        	    </tr>
+        	</table>
+
+			<p>
+
+#{form @Application.join(post.id)}
+	#{ifErrors}
+		<p class="error">
+			${errors[0]}
+		</p>
+	#{/ifErrors}
+	#{if user}
+				<fieldset>
+    				<div class="control-group">
+      					<div class="controls">
+      						#{ifnot isParticipate}
+        					<textarea class="input-xlarge" name="comment" id="comment" rows=3 placeholder="参加への意気込みをどうぞ！"></textarea>
+		 			       	<button  class="btn btn-primary"  name="join" type="submit"  ><i class="icon-ok icon-white"></i>参加する</button>
+							#{/ifnot}
+							#{else}
+		        	        <button  class="btn btn-danger"  name="cancel" type="submit" ><i class="icon-remove icon-white"></i>キャンセルする</button>
+      						#{/else}
+      					</div>
+				    </div>
+ 				 </fieldset>
+ 	#{/if}
+ #{/form}
+
+
+
+	        <h3>宿題</h3>
+	        <p>${post.content}</p>
+	        <h3>参加者</h3>
+	        <ol>
+#{list items:post.participants, as:'participant'}
+	            <li>${participant.participant.nickname} : <small>${participant.comment}</small></li>
+#{/list}
+	        </ol>
+        </div>
+
+
+
+
+#{if flash.success}
+    <p class="success">${flash.success}</p>
+#{/if}
+
+    </div><!--/row-->
+
+
+
+<script type="text/javascript" charset="utf-8">
+    $(function() {
+        // Expose the form
+        $('form').click(function() {
+            $('form').expose({api: true}).load();
+        });
+
+        // If there is an error, focus to form
+        if($('form .error').size()) {
+            $('form').expose({api: true, loadSpeed: 0}).load();
+            $('form input[type=text]').get(0).focus();
+        }
+    });
+</script>
+
+

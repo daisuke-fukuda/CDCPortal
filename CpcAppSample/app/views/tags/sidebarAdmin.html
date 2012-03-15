@@ -1,0 +1,19 @@
+ <!--------------------☆☆サイドバー☆☆ ------------------ -->
+<div class="span3">
+	<div class="well sidebar-nav">
+  		<ul class="nav nav-list">
+        <li class="${request.controller == 'Admin' ? 'selected' : ''}">
+            <a href="@{Admin.index()}">My posts</a>
+        </li>
+        #{secure.check 'admin'}
+            <li class="${request.controller == 'Posts' ? 'class= active' : ''}">
+                <a href="@{Posts.list()}">投稿</a>
+            </li>
+            <li class="${request.controller == 'Users' ? 'class= active' : ''}">
+                <a href="@{Users.list()}">ユーザー</a>
+            </li>
+        #{/secure.check}
+		</ul>
+	</div><!--/.well -->
+</div><!--/span-->
+<!--------------------☆☆サイドバーend☆☆ ------------------ -->

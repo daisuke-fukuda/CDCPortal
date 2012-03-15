@@ -1,0 +1,27 @@
+#{extends 'CRUD/layout.html' /}
+#{set title:messages.get('crud.blank.title', type.modelName) /}
+%{
+   if(type.name=='Users') {
+   		type.modelName = "ユーザー";
+   		type.name = "ユーザー";
+	}
+}%
+<div id="crudBlank" class="${type.name}">
+    <div class="page-header">
+    <h2 id="crudBlankTitle">&{'crud.blank.title', type.modelName}</h2>
+    </div>
+<row>
+    <div class="objectForm">
+    #{form action:@create(), enctype:'multipart/form-data', class:'well'}
+      <fieldset>
+          #{crud.form /}
+        <p class="crudButtons">
+            <input type="submit" name="_save" value="&{'crud.save', type.modelName}"  class="btn btn-success"/>
+            <input type="submit" name="_saveAndContinue" value="&{'crud.saveAndContinue', type.modelName}" class="btn btn-success" />
+            <input type="submit" name="_saveAndAddAnother" value="&{'crud.saveAndAddAnother', type.modelName}" class="btn btn-success" />
+        </p>
+        </fieldset>
+    #{/form}
+    </div>
+</row>
+</div>

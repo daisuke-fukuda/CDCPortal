@@ -1,0 +1,40 @@
+#{extends 'CRUD/layout.html' /}
+#{set title:messages.get('crud.list.title', type.name) /}
+
+%{
+   if(type.name=='Users') {
+   		type.modelName = "ユーザー";
+   		type.name = "ユーザー";
+	}
+}%
+
+<div id="crudList" class="${type.name}">
+
+	<div class="page-header">
+    <h2 id="crudListTitle">
+    #{if type.name=='Users'}
+     &{'crud.list.title.users'}
+    #{/if}
+    #{else}
+    &{'crud.list.title', type.name}
+    #{/else}
+    </h2>
+	</div>
+
+    <div id="crudListSearch">
+        #{crud.search /}
+    </div>
+
+    <div id="crudListTable">
+        #{crud.table /}
+    </div>
+
+    <div id="crudListPagination">
+        #{crud.pagination /}
+    </div>
+
+    <p id="crudListAdd">
+        <a href="@{blank()}" class='btn btn-primary'>&{'crud.add', type.modelName}</a>
+    </p>
+
+</div>

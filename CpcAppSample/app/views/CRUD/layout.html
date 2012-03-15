@@ -1,0 +1,38 @@
+#{extends 'admin.html' /}
+#{set 'moreStyles'}
+    <link href="@{'/public/assets/css/bootstrap.css'}" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+    </style>
+    <link href="@{'/public/assets/css/bootstrap-responsive.css'}" rel="stylesheet">
+    <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/crud.css'}" />
+        <script src="@{'/public/javascripts/jquery-1.6.4.min.js'}"></script>
+        <script src="@{'/public/javascripts/jquery.tools-1.2.5.toolbox.expose.min.js'}"></script>
+
+#{/set}
+
+
+
+<div class="span9">
+
+    #{if flash.success}
+    	<div class="crudFlash flashSuccess  alert alert-success">
+    		${flash.success}
+    	</div>
+    #{/if}
+    #{if flash.error || error}
+    	<div class="crudFlash flashError alert alert-error">
+    		${error ?: flash.error}
+    	</div>
+    #{/if}
+
+    <div id="crudContent">
+    	#{doLayout /}
+    </div>
+</div>

@@ -1,0 +1,22 @@
+#{extends 'main.html' /}
+#{set title:'CDCポータルTop' /}
+
+#{if !fromtPost}
+        <div class="span9">
+          <div class="hero-unit">
+            <h1>${frontPost.holdAt.format()} ${frontPost.title}</h1>
+            <p>${frontPost.content.size() >= 100 ? frontPost.content.substring(0,100) + "…" :frontPost.content }</p>
+            <p><a class="btn btn-primary btn-large" href="#">詳細情報&raquo;</a></p>
+          </div>
+	#{list items:olderPosts, as:'post'}
+          <div class="row-fluid">
+            <div class="span8">
+              <h2>${post.title}</h2>
+              <p>${post.content.size() >= 100 ? post.content.substring(0,100) + "…" :post.content } </p>
+              <p><a class="btn" href="#">詳細情報&raquo;</a></p>
+            </div><!--/span-->
+          </div><!--/row-->
+	#{/list}
+        </div><!--/span-->
+#{/if}
+

@@ -1,0 +1,12 @@
+#Thu Mar 15 11:23:13 JST 2012
+eclipse.preferences.version=1
+encoding//app/views/Application/index.html=UTF-8
+encoding//app/views/Application/show.html=UTF-8
+encoding//app/views/CRUD/blank.html=UTF-8
+encoding//app/views/tags/crud/checkField.html=UTF-8
+encoding//app/views/tags/crud/form.html=UTF-8
+encoding//app/views/tags/sidebar.html=UTF-8
+encoding//app/views/tags/sidebarAdmin.html=UTF-8
+encoding//app/views/tags/topMenu.html=UTF-8
+encoding//crud/views/CRUD/layout.html=UTF-8
+encoding/<project>=UTF-8

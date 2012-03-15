@@ -1,0 +1,78 @@
+# You can specialize this file for each language.
+# For example, for French create a messages.fr file
+#
+title=タイトル
+content=内容
+postedAt=投稿日時
+author=投稿者
+post=関連する投稿
+tags=タグ
+name=名前
+email=Email
+password=Password
+fullname=フルネーム
+nickname=ニックネーム
+isAdmin=管理者
+holdAt=開催日時
+place=場所
+theme=テーマ
+lecturer=講師
+
+
+
+
+secure.username=Email
+secure.password=パスワード
+secure.signin=ログイン
+secure.title=
+secure.remember=記憶する
+secure.error=Emailとパスワードが一致しません。
+secure.logout=ログアウトしました。
+
+crud.list.title=&{%s}管理画面
+crud.add=新規&{%s}追加
+crud.save=保存
+crud.saveAndContinue=保存して続ける
+crud.saveAndAddAnother=保存してさらに追加
+crud.blank.title=&{%s}新規追加
+crud.show.title=&{%s}を編集
+
+crud.help.required=必須
+crud.help.minlength=%d桁以上
+crud.help.maxlength=%d桁以下
+crud.help.email=Email
+crud.help.dateformat=&{%s} format.
+crud.help.numeric=数字
+crud.help.min=%d以上
+crud.help.future=In the future.
+crud.help.past=In the past.
+crud.help.after=After %s.
+crud.help.before=Before %s.
+crud.help.range=%d - %d
+
+crud.hasErrors=エラーを修正してください。
+
+
+validation.required=必須項目です。
+validation.minSize=Minimum size is %2$d
+validation.maxSize=Maximum size is %2$d
+validation.email=アドレスが不正です。
+validation.range=Not in the range %2$d through %3$d
+validation.min=Cannot be lower than %2$d
+validation.max=Cannot be greater than %2$d
+validation.match=Must match %2$s
+validation.isTrue=Must be checked
+validation.equals=Must be equal to &{%2$s}
+validation.invalid=Incorrect value
+validation.future=Must be in the future
+validation.after=Must be after %2$s
+validation.past=Must be in the past
+validation.before=Must be before %2$s
+validation.object=Validation failed
+validation.notFound=Object not found for id %2$s
+validation.url=Not a valid URL
+validation.phone=Not a valid phone
+validation.ipv4=Not a valid IP address
+validation.ipv6=Not a valid IP v6 address
+field.errorClass="alert alert-error"
+
